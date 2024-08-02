@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+<style type="text/css">
+	table{
+	 border: 2px solid black; 
+	 width: 100%; /* 테이블이 main 태그의 너비를 따르게 함 */
+	} 	
+</style>
+
+</head>
+<body>
+	<main style="text-align: center; width: 500px; margin: 0 auto;"> <!-- 너비를 테이블과 일치시키고 중앙 정렬 -->
+		<h1>회원가입</h1>
+		 
+		<table>
+			<thead>
+				<tr>
+					 <th>회원아이디</th>
+					<th>회원비번</th>
+					<th>회원이름</th>
+					<th>버튼</th>
+				</tr>
+			</thead>
+			<tbody style="background-color: white;">
+			<tr >
+					<td> <input type="text" id="userdId" />  </td>
+					<td><input type="text" id="userdPw"  />  </td>
+					<td><input type="text" id="userdName" />  </td>
+					<td><input type="button" value="button"> </td> 
+				</tr>
+				
+			</tbody>	
+		</table>
+		 
+		회원목록
+		
+		<table>
+			<thead>
+				<tr>
+					 <th>회원아이디</th>
+					<th>회원비번</th>
+					<th>회원이름</th>
+					<th>버튼</th>
+				</tr>
+			</thead>
+			<tbody style="background-color: white;">
+				<tr th:each="map : ${list}">
+					<td th:text="${map.UserNum}"></td>
+					<td th:text="${map.UserId}">   </td> 
+					<td th:text="${map.UserPw}">   </td>
+					<td><input type="submit" value="Submit">   </td>
+				</tr>
+			</tbody>	
+		</table>
+		
+	</main>
+</body>
+</html>
