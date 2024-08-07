@@ -9,7 +9,7 @@
   </select>
   
   <select id="list" statementType="CALLABLE" resultType="Map">
-  	call p_u2_list()
+  	CALL p_u2_list()
   </select>
   
   <select id="review" statementType="CALLABLE" parameterType="Map">

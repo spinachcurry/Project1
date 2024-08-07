@@ -22,18 +22,24 @@ public class DevController {
 	@Autowired
 	private DevMapper dm;
 	
-	@GetMapping("/list") 
-	public String home(Model model) {
-		model.addAttribute("list", dm.signup());
-		
-		return "home1";
+	@GetMapping("/singUp") 
+	public String singUp() {
+		return "signUp";
 	}
+	
+	@GetMapping("/userHome") 
+	public String userHome( ) { 
+		return "userHome";
+	}
+	
 	@GetMapping("/") 
 	public String list(Model model) {
 		model.addAttribute("list", dm.storeList());
 		model.addAttribute("list1", dm.list1());
 		return "home";
 	}
+	
+	
 	
 	@GetMapping("/insert")
 	public String insert() {

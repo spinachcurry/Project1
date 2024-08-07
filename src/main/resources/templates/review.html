@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<title>review page</title>
+</head>
+<body>
+ <h1>후기 입력</h1>
+          
+        <table>
+            <thead>
+                <tr> 
+                    <th>storeNum</th>
+                    <th>review</th> 
+                    <th>버튼</th> 
+                </tr>
+            </thead>
+            <tbody style="background-color: white;">
+                <tr>
+                    <td><input type="text" value="${StoreNum}"></td>
+                    <td><input type="text" value="${Review}"></td>
+                    <td><input type="submit" value="Submit"></td> 
+                </tr>
+            </tbody>    
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>StoreName</th>
+                    <th>review</th> 
+                </tr>
+            </thead> 
+            <tbody style="background-color: white;">
+                 <tr th:each="map : ${list1}">
+                    <td th:text="${map.StoreNum}"></td>
+                    <td th:text="${map.Review}"></td> 
+                </tr>
+            </tbody>    
+        </table>
+</body>
+</html>
