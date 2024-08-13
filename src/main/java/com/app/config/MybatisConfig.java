@@ -1,4 +1,4 @@
-package com.pjt.project01.config;
+package com.app.config;
 
 import javax.sql.DataSource;
 
